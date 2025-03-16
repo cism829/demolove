@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="script.js" defer></script> -->
+    <script src="hangman.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hangman-style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <a href="../index.html">
+        <button> Home </button>
+    </a>
+        <section id="title">
+           <h1> Welcome to Hangman !!! </h1> 
+           <button id="play"> CLICK TO PLAY</button>
+        </section>
+        
+
+        <section id="game">
+            <div id="incorrect">
+                <h2>Incorrect Guesses</h2>
+            </div>
+            <div id="person">
+                <img id="hanged_man" src="bar.png" alt="hangman"/>
+            </div>
+            <div id="grid"></div>
+        </section>
+        <section id="user">
+            <div id="player">
+                <p>Enter a Letter:</p>
+                <div id="info">
+                    <input id="letter_guess" maxlength="1">
+                    <button id="guess">Enter</button>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="music-script.js" defer></script>
+    <link rel="stylesheet" href="mustic-style.css">
+    <title>My Baby's music</title>
+</head>
+<body>
+    <div id="audio">
+        <div id="playlist">
+            <button id="open"> 
+                <img src="assets/menu.png" alt="menu button">
+            </button>
+            
+            <div class="dropdown">
+                <div id="all_songs">
+                    <h3> All Songs :3</h3>
+
+                </div>
+            </div>
+        </div>
+
+        <img id="song_pic" src="cover_art/owt_cover.jfif" alt="song picture">
+        <div id="music_info">
+            <h1 id="song_title">Oscar Winning Tears</h1>
+            <p id="artist">RAYE</p>
+        </div>
+        <audio id="mp3_player"  autoplay>
+            <source id="current_song" src="mp3_files/oscar_winning_tears.mp3" type="audio/mpeg">   
+        </audio>
+        <div id="slider">
+            <p id="one_length">0:00 / 0:00</p>
+            <input type="range" id="progress_bar" value="0" min="0" step="0.1">
+        </div>
+        <div id="audio_controls">
+            
+
+            <div id="audio_buttons">
+                <button id="back">
+                    <img src="assets/back_button.png" alt="back button">
+                </button>
+                <button >
+                    <img id="playpause" src="assets/play_button.png" alt="play button">
+                </button>
+                <button id="next">
+                    <img src="assets/forward_button.png" alt="forward_button">
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

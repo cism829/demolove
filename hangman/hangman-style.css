@@ -1,0 +1,77 @@
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#title{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+}
+
+#title h1{
+    font-size: 45pt;
+}
+
+#game{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: blueviolet; */
+}
+
+#user{
+    display: flex;
+    justify-content: center;
+    /* background-color: chartreuse; */
+}
+
+#person img{
+    height: 300px;
+    width: auto;
+    align-self: center;
+}
+
+#letter_guess{
+    width: 30px;
+    height: 30px;
+}
+
+#play{
+    display: none;
+}
+
+#i_letters{
+    font-size: 25pt;
+    color: red;
+}
+
+#the_grid{
+    margin-left: 20px;
+    font-size: 25pt;
+}
+
+#outcome{
+    font-size: 30pt ;
+}
+
+#player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25pt;
+    /* background-color: blue; */
+}
+#player p{
+    margin-bottom: 0px;
+}
+#info{
+    flex-direction: row;
+    margin-top: 0px;
+    /* background-color: aquamarine; */
+    
+}
