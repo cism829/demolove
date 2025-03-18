@@ -13,19 +13,19 @@ const slider = document.getElementById('slider');
 // const one_length = document.getElementById('one_length')
 
 songs = [
-        {file: 'oscar_winning_tears.mp3', title: 'Oscar Winning Tears', artist: 'RAYE', img: 'owt_cover.jfif'},
-        {file: 'residuals.mp3', title: 'Residuals', artist: 'Chris Brown', img: 'residuals.jpg'},
-        {file: 'conversation_pit.mp3', title: 'Conversation Pit', artist: 'Junetober', img: 'cp_cover.jpg'},
-        {file: 'myself.mp3', title: 'Myself', artist: 'Layton Greene', img: 'myself_cover.jpg'}, 
-        {file: 'mbn.mp3', title: 'Must Be Nice', artist: 'Lyfe Jennings', img: 'mbn_cover.jpg'},   
-        {file: 'ygwin.mp3', title: 'You Got What I Need', artist: 'Joshua Radin', img: 'ygwin_cover.jpg'},
-        {file: 'siy.mp3', title: 'Smash Into You', artist: 'Beyonce', img: 'siy_cover.png'},
-        {file: 'Balloon.mp3', title: 'Balloon (ft. Doechii)', artist: 'Tyler, The Creator', img: 'balloon.jpg'},
-        {file: 'rich.mp3', title: 'Rich $ex', artist: 'Future', img: 'rich.webp'},
-        {file: 'suffering.mp3', title: 'Suffering', artist: 'Jorge Rivera Herrans, Anna Lee', img: 'suffering.jpg'},
-        {file: 'wild.mp3', title: 'Wild Things', artist: 'Alessia Cara', img: 'wild.jpg'},
-        {file: 'scientist.mp3', title: 'The Scientist', artist: 'Corinne Bailey Rae', img: 'scientist.jpg'},
-        {file: 'love_for_you.mp3', title: 'Saving All My Love for You', artist: 'Whitney Houston', img: 'love_for_you_cover.jpg'}
+        {id: 1, file: 'oscar_winning_tears.mp3', title: 'Oscar Winning Tears', artist: 'RAYE', img: 'owt_cover.jfif'},
+        {id: 2, file: 'residuals.mp3', title: 'Residuals', artist: 'Chris Brown', img: 'residuals.jpg'},
+        {id: 3, file: 'conversation_pit.mp3', title: 'Conversation Pit', artist: 'Junetober', img: 'cp_cover.jpg'},
+        {id: 4, file: 'myself.mp3', title: 'Myself', artist: 'Layton Greene', img: 'myself_cover.jpg'}, 
+        {id: 5, file: 'mbn.mp3', title: 'Must Be Nice', artist: 'Lyfe Jennings', img: 'mbn_cover.jpg'},   
+        {id: 6, file: 'ygwin.mp3', title: 'You Got What I Need', artist: 'Joshua Radin', img: 'ygwin_cover.jpg'},
+        {id: 7, file: 'siy.mp3', title: 'Smash Into You', artist: 'Beyonce', img: 'siy_cover.png'},
+        {id: 8, file: 'Balloon.mp3', title: 'Balloon (ft. Doechii)', artist: 'Tyler, The Creator', img: 'balloon.jpg'},
+        {id: 9, file: 'rich.mp3', title: 'Rich $ex', artist: 'Future', img: 'rich.webp'},
+        {id: 10, file: 'suffering.mp3', title: 'Suffering', artist: 'Jorge Rivera Herrans, Anna Lee', img: 'suffering.jpg'},
+        {id: 11, file: 'wild.mp3', title: 'Wild Things', artist: 'Alessia Cara', img: 'wild.jpg'},
+        {id: 12, file: 'scientist.mp3', title: 'The Scientist', artist: 'Corinne Bailey Rae', img: 'scientist.jpg'},
+        {id: 13, file: 'love_for_you.mp3', title: 'Saving All My Love for You', artist: 'Whitney Houston', img: 'love_for_you_cover.jpg'}
 
         // {file: '', title: '', artist: '', img: ''}
     ]
@@ -138,6 +138,7 @@ function showSongs(){
             console.log(songs[i].title)
             one_song = document.createElement('div');
             one_song.classList.add('singular')
+            one_song.id = songs[i].id
 
             img_song = document.createElement('img');
             img_song.src = 'cover_art/' + songs[i].img
@@ -149,9 +150,30 @@ function showSongs(){
             one_song.appendChild(img_song)
             one_song.appendChild(title_song)
         }
+        document.querySelectorAll('.singular').forEach(element => {
+            element.addEventListener('click', function() {
+                console.log(element.id)
+                playSong(element.id)
+                console.log('Element clicked:', this);
+            });
+        });
         console.log('done')
     }
     else{
         console.log('Playlist already created')
     }
+
+}
+
+
+function playSong(id){
+    i = (id - 1);
+    current_song.src = 'mp3_files/' + songs[i].file; 
+    console.log(current_song)
+    song_title.textContent = songs[i].title
+    song_artist.textContent = songs[i].artist
+    song_pic.src = 'cover_art/' + songs[i].img;
+    console.log(song_pic.src)
+    mp3.load(); 
+    mp3.play();
 }
